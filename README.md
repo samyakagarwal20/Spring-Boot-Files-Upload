@@ -31,3 +31,38 @@ In this method, we have explicitly defined a datasource and a corresponding Jdbc
 
 The configuration are done within the file **JDBCConfig.java**
 
+---
+## Using Multipart File Upload in Spring Boot
+
+A multi-part file, also known as multi-part form data, is a type of HTTP request which allows us to upload the files along with the form fields in a single HTTP request.
+
+```MultipartFile``` is an interface in Spring Framework that represents an uploaded file received in a multipart request. It is used to handle file uploads in web applications, typically in scenarios where users can submit files through HTML forms. This interface provides methods to access the properties and content of the uploaded file.
+
+The following are some of the key methods provided by the MultipartFile interface:
+
+* ```String getOriginalFilename()```: Returns the original filename of the uploaded file.
+* ```String getName()```: Returns the name of the form field associated with this file upload.
+* ```String getContentType()```: Returns the content type of the uploaded file.
+* ```boolean isEmpty()```: Checks if the uploaded file is empty.
+* ```long getSize()```: Returns the size of the uploaded file in bytes.
+* ```byte[] getBytes()```: Returns the content of the uploaded file as a byte array.
+* ```InputStream getInputStream()```: Returns an InputStream to read the content of the uploaded file.
+* ```void transferTo(File dest) throws IOException```: Transfers the uploaded file to the specified destination file on the server's filesystem.
+
+---
+## Overview of this application
+
+When dealing with files, for example, images, we have 2 approaches that we can go for:
+
+1. Storing the image into the DB
+    - we will compress the file to store it into the DB
+    - we will decompress the file while retrieving it from DB
+    - this approach deals with more security for the file
+    - since the file will be stored into the DB over a network, thus, it will certainly have a delay
+
+2. Storing the image into a file system
+    - we will store the file to the file system
+    - Along with that,we will store the path of the image/file into the database
+    - this approach is generally preferred in case, we want frequent access to the file
+
+In this application, we are going with the 1st approach.
