@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "a75e3fd0-9b99-4f5f-8a02-65507d4b1552",
+		"name": "Spring File Handling",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28840259"
+	},
+	"item": [
+		{
+			"name": "upload-file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/F:/DP/Yellow Flash/0578b544076bf1d8dd70f38b31567416e28dcf7cr1-640-640v2_hq.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/files/upload-file",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"upload-file"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "download-file",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/files/download-file/0578b544076bf1d8dd70f38b31567416e28dcf7cr1-640-640v2_hq.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"download-file",
+						"0578b544076bf1d8dd70f38b31567416e28dcf7cr1-640-640v2_hq.jpg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-files",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/files/list-files",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files",
+						"list-files"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
